@@ -19,6 +19,7 @@ package tasks
 
 import (
 	"encoding/json"
+	"fmt"
 	"regexp"
 
 	"github.com/apache/incubator-devlake/core/errors"
@@ -52,6 +53,7 @@ func ExtractPrs(taskCtx plugin.SubTaskContext) errors.Error {
 		}
 	}
 	if config != nil && len(config.PrComponent) > 0 {
+		fmt.Println("config.PrComponent1", config.PrComponent)
 		labelComponentRegex, err = errors.Convert01(regexp.Compile(config.PrComponent))
 		if err != nil {
 			return errors.Default.Wrap(err, "regexp Compile prComponent failed")
