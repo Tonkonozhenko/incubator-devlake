@@ -1,4 +1,4 @@
-module github.com/apache/incubator-devlake/backend
+module github.com/apache/incubator-devlake
 
 go 1.20
 
